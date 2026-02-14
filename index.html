@@ -52,5 +52,51 @@ button {
 <h1 id="question">Twinkle, Will you be my Valentine? ❤️</h1>
 
 <div>
-<button id="yes" onclick="yesClicke
+<button id="yes">Yes 💖</button>
+<button id="no">No 😢</button>
+</div>
 
+<script>
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+
+function moveButton() {
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 80);
+    noBtn.style.position = "fixed";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+}
+
+// Desktop hover
+noBtn.addEventListener("mouseenter", moveButton);
+
+// Mobile touch
+noBtn.addEventListener("touchstart", function(e){
+    e.preventDefault();
+    moveButton();
+});
+
+// YES click
+yesBtn.addEventListener("click", function() {
+    document.body.innerHTML = `
+    <div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#ffe6eb;flex-direction:column;overflow:hidden;">
+        <img src="https://raw.githubusercontent.com/amitconvex/Twinkle/25c3b6ab4bf52a9dcdb39b4fd039d2680210aba7/ChatGPT%20Image%20Feb%2014%2C%202026%2C%2002_28_34%20PM.png" style="width:90%;max-width:400px;border-radius:20px;">
+    </div>
+    `;
+
+    for(let i=0;i<25;i++){
+        let heart = document.createElement("div");
+        heart.innerHTML = "❤️";
+        heart.style.position = "fixed";
+        heart.style.left = Math.random()*100 + "vw";
+        heart.style.top = "100vh";
+        heart.style.fontSize = "24px";
+        heart.style.animation = "floatUp 3s linear forwards";
+        document.body.appendChild(heart);
+    }
+});
+</script>
+
+</body>
+</html>
