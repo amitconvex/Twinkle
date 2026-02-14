@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Valentine Surprise</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#ffe6eb;
+    font-family:Arial;
+    flex-direction:column;
+    text-align:center;
+    padding:20px;
+    overflow:hidden;
+}
+h1 {
+    font-size:6vw;
+}
+button {
+    padding:15px 30px;
+    margin:10px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+#yes {
+    background:#ff4d6d;
+    color:white;
+}
+#no {
+    background:#ccc;
+    position:absolute;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-120vh);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1 id="question">Twinkle, Will you be my Valentine? ❤️</h1>
+
+<div>
+<button id="yes" onclick="yesClicke
 
